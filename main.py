@@ -36,15 +36,31 @@ currency = {
     'code': 'EUR'
 }
 
+transactions = []
+
 bank_account = {
     'id': 1,
     'IBAN': 'HR45875465481354654',
     'balance': 0.00,
     'opening_date': '2025-09-29',
-    'currency': currency
+    'bank': bank,
+    'currency': currency,
+    'transactions': transactions
 }
 
+#endregion
 
 
+#region FUNCTIONS
+
+#endregion
+
+
+#region MAIN PROGRAM
+
+#endregion
+
+
+#region END PROGRAM
 
 #endregion
