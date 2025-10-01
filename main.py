@@ -1,5 +1,6 @@
 #region IMPORTS
 import os
+from typing import Dict
 
 #endregion
 
@@ -66,6 +67,10 @@ def clear_screen():
 
 def logout_screen():
     print('Pozdrav')
+
+
+def get_id(enity: Dict) -> int:
+    return enity['id']
 
 
 def company_has_account():

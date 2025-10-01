@@ -1,4 +1,7 @@
 #region INIT DATA
+from typing import Dict
+
+
 bank = {
     'id': 1,
     'name': 'Lipa po lipa d.d.',
@@ -53,3 +56,12 @@ company = {
 # Dohvat id broja
 
 
+def get_id(enity: Dict) -> int:
+    return enity['id']
+
+
+company_id = get_id(company)
+bank_account_id = get_id(bank_account)
+
+print(company_id)
+print(bank_account_id)
