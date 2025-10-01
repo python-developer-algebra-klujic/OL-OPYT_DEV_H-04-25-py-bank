@@ -46,8 +46,8 @@ company = {
         'country': 'Hrvatska'
     },
     'email': 'info@abc-software.hr',
-    # 'bank_account': bank_account
-    'bank_account': {}
+    'bank_account': bank_account
+    # 'bank_account': {}
 }
 
 
@@ -103,10 +103,16 @@ def print_dict(dictionary: Dict = {}) -> None:
     if dictionary != {}:
         for key, value in dictionary.items():
             key = transform_key(key)
-            row = f'{key:<15}{str(value):<25}'
-            print(row)
+
+            if type(value) == dict:
+                print()
+                print(key)
+                print_dict(value)
+            else:
+                row = f'{key:<15}{str(value):<25}'
+                print(row)
     else:
         print('Rjecnik nema niti jedan element.')
 
 
-print_dict(bank)
+print_dict(company)
