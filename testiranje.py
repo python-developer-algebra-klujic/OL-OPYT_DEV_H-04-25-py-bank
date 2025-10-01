@@ -43,11 +43,13 @@ company = {
         'country': 'Hrvatska'
     },
     'email': 'info@abc-software.hr',
-    'bank_account': bank_account
+    # 'bank_account': bank_account
+    'bank_account': {}
 }
 
 #endregion
 
 
-# Provjera ima li firma racun
+# Dohvat id broja
+
 

@@ -68,10 +68,25 @@ def logout_screen():
     print('Pozdrav')
 
 
+def company_has_account():
+    if company['bank_account'] == {}:
+        return False
+    else:
+        return True
+
 
 
 def main():
-    pass
+    # Provjera ima li firma otvoren racun.
+    if company_has_account():
+        print('nastavi s izvrsavanjem koda')
+        # main_menu()
+        wait_for_user()
+    else:
+        print('pokreni funkciju za otvaranje accounta ')
+        # create_bank_account()
+        wait_for_user()
+
 
 #endregion
 
