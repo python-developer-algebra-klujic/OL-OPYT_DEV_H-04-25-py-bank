@@ -80,13 +80,34 @@ def company_has_account():
         return True
 
 
+def main_menu() -> int:
+    clear_screen()
+    print()
+    print('*'*90)
+    # header()
+    print()
+    print('1. Prikaz detalja racuna')
+    print('0. Izlaz')
+    print()
+    print('*'*90)
+    print()
+    # TODO napraviti provjeru je li korisnik unio brojku iz izbornika
+    return int(input('Upisite broj ispred akcije koju zelite pokrenuti: '))
+
+
+def display_account_details():
+    pass
+
 
 def main():
     # Provjera ima li firma otvoren racun.
     if company_has_account():
-        print('nastavi s izvrsavanjem koda')
-        # main_menu()
-        wait_for_user()
+        menu_item = main_menu()
+
+        if menu_item == 0:
+            return
+        elif menu_item == 1:
+            display_account_details()
     else:
         print('pokreni funkciju za otvaranje accounta ')
         # create_bank_account()
