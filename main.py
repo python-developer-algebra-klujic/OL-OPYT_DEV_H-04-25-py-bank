@@ -1,5 +1,5 @@
 #region IMPORTS
-
+import os
 
 #endregion
 
@@ -37,6 +37,9 @@ currency = {
 }
 
 transactions = []
+'''
+id; date_time; amout; currnecy; bank_account; transaction_type [withdrow, deposit]
+'''
 
 bank_account = {
     'id': 1,
@@ -52,15 +55,35 @@ bank_account = {
 
 
 #region FUNCTIONS
+def wait_for_user():
+    input('Za nastavak pritisnite tipku ENTER! ')
+
+
+def clear_screen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+
+def logout_screen():
+    print('Pozdrav')
+
+
+
+
+def main():
+    pass
 
 #endregion
 
 
 #region MAIN PROGRAM
-
+if __name__ == '__main__':
+    # ucitavanje pocetnih vrijednosti iz datoteka load_init_data()
+    main()
 #endregion
 
 
 #region END PROGRAM
-
+clear_screen()
+logout_screen()
+wait_for_user()
 #endregion
