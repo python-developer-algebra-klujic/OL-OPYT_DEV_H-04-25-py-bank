@@ -53,15 +53,24 @@ company = {
 #endregion
 
 
-# Dohvat id broja
+# Prikaz detalja racuna
+def transform(key: str) -> str:
+    keys = key.split('_')
+    if len(keys) == 1:
+        return f'{keys[0].capitalize()}'
+    else:
+        title = ''
+        for element in keys:
+            title += f'{element.capitalize()} '
+        return title
 
 
-def get_id(enity: Dict) -> int:
-    return enity['id']
+def display_account_details() -> None:
+    # print(f'{"ID":<15} {bank_account['id']:<20}')
+    # print(f'{"IBAN":<15} {bank_account['IBAN']:<20}')
+    for key, value in bank_account.items():
+        key = transform(key)
+        print(f'{key:<15} {str(value):<20}')
 
 
-company_id = get_id(company)
-bank_account_id = get_id(bank_account)
-
-print(company_id)
-print(bank_account_id)
+display_account_details()
