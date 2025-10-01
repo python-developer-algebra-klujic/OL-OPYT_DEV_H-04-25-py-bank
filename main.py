@@ -142,7 +142,6 @@ def main():
         # create_bank_account()
         wait_for_user()
 
-
 #endregion
 
 
@@ -150,6 +149,7 @@ def main():
 if __name__ == '__main__':
     # ucitavanje pocetnih vrijednosti iz datoteka load_init_data()
     main()
+
 #endregion
 
 
