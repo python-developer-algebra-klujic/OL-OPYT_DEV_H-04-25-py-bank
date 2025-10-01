@@ -94,8 +94,13 @@ def transform_key(key: str) -> str:
         return keys[0].capitalize()
     else:
         text = ''
-        for element in keys:
-            text += f'{element.capitalize()} '
+        for index, element in enumerate(keys):
+            if index == 0:
+                text += f'{element.capitalize()} '
+            elif index == len(keys) - 1:
+                text += f'{element}'
+            else:
+                text += f'{element} '
         return text
 
 
