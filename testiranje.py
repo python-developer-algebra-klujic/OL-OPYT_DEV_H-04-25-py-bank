@@ -54,7 +54,7 @@ company = {
 
 
 # Prikaz detalja racuna
-def transform(key: str) -> str:
+def transform_key(key: str) -> str:
     keys = key.split('_')
     if len(keys) == 1:
         return f'{keys[0].capitalize()}'
@@ -65,12 +65,19 @@ def transform(key: str) -> str:
         return title
 
 
-def display_account_details() -> None:
+def display_entity_details(entity: Dict) -> None:
     # print(f'{"ID":<15} {bank_account['id']:<20}')
     # print(f'{"IBAN":<15} {bank_account['IBAN']:<20}')
-    for key, value in bank_account.items():
-        key = transform(key)
-        print(f'{key:<15} {str(value):<20}')
+    for key, value in entity.items():
+        key = transform_key(key)
+        if type(value) == dict:
+            print()
+            print(key)
+            display_entity_details(value)
+        elif type(value) == float:
+            print(f'{key:<15} {value:>15.3f} EUR')
+        else:
+            print(f'{key:<15} {str(value):<20}')
 
 
-display_account_details()
+display_entity_details(bank_account)
