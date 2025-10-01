@@ -50,6 +50,8 @@ company = {
     'bank_account': {}
 }
 
+
+test_dict = {}
 #endregion
 
 '''
@@ -86,10 +88,25 @@ company = {
 
 # Trebamo napraviti funkciju koja ispisuje elemente bilo kojeg rjecnika 
 # tako da ispise kljuc kojem poveca prvo slovo i nakon toga vrijednost uz taj kljuc.
+def transform_key(key: str) -> str:
+    keys = key.split('_')
+    if len(keys) == 1:
+        return keys[0].capitalize()
+    else:
+        text = ''
+        for element in keys:
+            text += f'{element.capitalize()} '
+        return text
 
-def print_dict(dictionary: Dict) -> None:
-    for key, value in dictionary.items():
-        print(key, value)
+
+def print_dict(dictionary: Dict = {}) -> None:
+    if dictionary != {}:
+        for key, value in dictionary.items():
+            key = transform_key(key)
+            row = f'{key:<15}{str(value):<25}'
+            print(row)
+    else:
+        print('Rjecnik nema niti jedan element.')
 
 
-print_dict(currency)
+print_dict(bank)
